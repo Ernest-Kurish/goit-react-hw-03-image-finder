@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import css from './Searchbar.module.css';
 
-export class Searchbar extends Component {
+class Searchbar extends Component {
   state = {
-    value: '',
-  };
+      value: '',
+    };
+  
 
-  onHandleChange = event => {
-    event.preventDefault();
+  onHandleChange = (event) => {
     this.setState({
       value: event.target.value,
     });
   };
 
-  onHandleSubmit = event => {
+  onHandleSubmit = (event) => {
     event.preventDefault();
     this.props.onSubmit(this.state.value);
   };
 
   render() {
+    const { value } = this.state;
+
     return (
       <header className={css.Searchbar}>
         <form className={css.SearchForm} onSubmit={this.onHandleSubmit}>
-          <button className={css['SearchForm-button']} text="false" type="submit">
-            Search
+          <button className={css['SearchForm-button']} type="submit">
+            <span className={css['button-label']}>Search</span>
           </button>
           <input
             className={css['SearchForm-input']}
@@ -31,7 +33,7 @@ export class Searchbar extends Component {
             autoComplete="off"
             autoFocus
             placeholder="Search images and photos"
-            value={this.state.value}
+            value={value}
             onChange={this.onHandleChange}
           />
         </form>
@@ -39,3 +41,5 @@ export class Searchbar extends Component {
     );
   }
 }
+
+export default Searchbar;

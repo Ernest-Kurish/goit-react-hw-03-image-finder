@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import css from './ImageGalleryItem.module.css';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-export class ImageGalleryItem extends Component {
+class ImageGalleryItem extends Component {
   render() {
     const { webformatURL, largeImageURL, onShow, tags } = this.props;
     return (
@@ -19,7 +19,9 @@ export class ImageGalleryItem extends Component {
 }
 
 ImageGalleryItem.propTypes = {
-  webformatURL: propTypes.string,
-  largeImageURL: propTypes.string,
-  onShow: propTypes.func,
+  webformatURL: PropTypes.string,
+  largeImageURL: PropTypes.string,
+  onShow: PropTypes.func,
 };
+
+export default ImageGalleryItem;

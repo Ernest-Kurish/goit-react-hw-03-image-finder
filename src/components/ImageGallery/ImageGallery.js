@@ -1,9 +1,9 @@
-import { Component } from 'react';
-import { ImageGalleryItem } from 'components/ImageGalleryItem/ImageGalleryItem';
+import React, { Component } from 'react';
+import ImageGalleryItem from 'components/ImageGalleryItem/ImageGalleryItem';
 import css from './ImageGallery.module.css';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-export class ImageGallery extends Component {
+class ImageGallery extends Component {
   render() {
     const { images, onShow } = this.props;
     return (
@@ -22,6 +22,8 @@ export class ImageGallery extends Component {
 }
 
 ImageGallery.propTypes = {
-  images: propTypes.array,
-  onShow: propTypes.func,
+  images: PropTypes.array,
+  onShow: PropTypes.func,
 };
+
+export default ImageGallery;
