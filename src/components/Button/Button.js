@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-import css from './Button.module.css';
+import React from 'react';
 import PropTypes from 'prop-types';
+import css from './Button.module.css';
 
-class Button extends Component {
-  render() {
-    const { onClick, name, type } = this.props;
-    return (
-      <button className={css.Button} type={type} onClick={onClick}>
-        {name}
-      </button>
-    );
-  }
-}
+const Button = ({ onClick, name, type }) => (
+  <button className={css.Button} type={type} onClick={onClick}>
+    {name}
+  </button>
+);
 
 Button.propTypes = {
   onClick: PropTypes.func,
